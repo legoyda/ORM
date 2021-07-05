@@ -8,7 +8,7 @@ from models.equipmnet import Equipment
 from models.company import Company
 from models.electrical import Electrical
 from models.mechanical import Mechanical
-from models.tax_info import Tax_info
+from models.tax_info import TaxInfo
 
 if __name__ == '__main__':
     db_is_created = os.path.exists(DATABASE_NAME)
