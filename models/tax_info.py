@@ -8,9 +8,9 @@ class TaxInfo(Base):
     __tablename__ = 'tax_info'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String, ForeignKey('company.id'))
+    name = Column(String, ForeignKey('company.name'))
     comercial_info = Column(String)
-    company = relationship('company')
+    company_id = relationship('company.id')
 
     def __repr__(self):
         return f'(ID:{self.id}),(Comercial Info:{self.comercial_info})'

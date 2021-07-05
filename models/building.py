@@ -1,9 +1,9 @@
 from sqlalchemy import Table, Column, Integer, String, ForeignKey
 from models.database import Base
 
-association_table = Table('association', Base.metadata,
+association_table = Table('building_companies', Base.metadata,
                           Column('building_name', Integer, ForeignKey('company.name')),
-                          Column('building.addres', String, ForeignKey('company.id')))
+                          Column('building.addres', String, ForeignKey('company.addres')))
 
 
 class Building(Base):
