@@ -1,16 +1,16 @@
-# This is a sample Python script.
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from models.database import DATABASE_NAME
+import create_database as db_creator
+from models.room import Room
+from models.building import Building
+from models.equipmnet import Equipment
+from models.company import Company
+from models.electrical import Electrical
+from models.mechanical import Mechanical
+from models.tax_info import Tax_info
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    db_is_created = os.path.exists(DATABASE_NAME)
+    if not db_is_created:
+        db_creator.create_db()
