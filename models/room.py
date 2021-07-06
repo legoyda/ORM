@@ -11,6 +11,4 @@ class Room(Base):
     number = Column(String)
     size = Column(String)
     building = relationship('building')
-
-    def __repr__(self):
-        return f'(Room ID:{self.id}),(Room number:{self.number}),(Room size:{self.size}))'
+    building_id = Column(Integer, ForeignKey('building.id'))
